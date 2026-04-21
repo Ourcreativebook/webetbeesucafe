@@ -454,8 +454,8 @@
 </head>
 <body>
 <div class="app-container">
-    <!-- Hero Image - Real Ethiopian Traditional Food -->
-    <img class="hero-image" src="https://images.pexels.com/photos/12793315/pexels-photo-12793315.jpeg?w=1400&h=400&fit=crop" alt="Ethiopian Traditional Food - Beautiful Injera with Doro Wat and Tibs">
+    <!-- Hero Image - Ethiopian Traditional Food Platter (Food Only) -->
+    <img class="hero-image" src="https://images.pexels.com/photos/6094929/pexels-photo-6094929.jpeg?w=1400&h=400&fit=crop" alt="Ethiopian Traditional Food Platter - Injera with Various Wot">
 
     <!-- Hero Header -->
     <div class="hero">
@@ -566,9 +566,9 @@
     // ---------- CLIENT CONFIGURATION ----------
     const RESTAURANT_PHONE = "0911718700";
     
-    // ---------- FULL MENU DATA WITH RELIABLE IMAGES ----------
+    // ---------- FULL MENU DATA WITH FOOD-ONLY IMAGES ----------
     const MENU_ITEMS = [
-        // Ethiopian Meat & Traditional - Real Ethiopian food images
+        // Ethiopian Meat & Traditional - Real Ethiopian food images only
         { id: 1, name: "ታልቅ / Quiet", price: 370, category: "ethiopian", img: "https://images.pexels.com/photos/6094930/pexels-photo-6094930.jpeg?w=400&h=300&fit=crop", desc: "Slow cooked meat", popular: false },
         { id: 2, name: "የባማ ቀብስ / Yebeg tibes", price: 600, category: "ethiopian", img: "https://images.pexels.com/photos/6089150/pexels-photo-6089150.jpeg?w=400&h=300&fit=crop", desc: "Juicy lamb tibs", popular: true },
         { id: 3, name: "የባማ ቅቅል / Yebeg kikil", price: 420, category: "ethiopian", img: "https://images.pexels.com/photos/6054752/pexels-photo-6054752.jpeg?w=400&h=300&fit=crop", desc: "Lamb stew", popular: false },
@@ -578,17 +578,17 @@
         { id: 7, name: "ክትፎ ፍርፍር / Kitfo Firfir", price: 350, category: "ethiopian", img: "https://images.pexels.com/photos/6094932/pexels-photo-6094932.jpeg?w=400&h=300&fit=crop", desc: "Spiced minced meat", popular: false },
         { id: 8, name: "ከምበ የቆስክ / Combo Yefisik", price: 850, category: "ethiopian", img: "https://images.pexels.com/photos/12793315/pexels-photo-12793315.jpeg?w=400&h=300&fit=crop", desc: "Meat combo platter", popular: true },
         
-        // Burgers & Pizza
+        // Burgers & Pizza - Food only
         { id: 9, name: "Normal Burger", price: 420, category: "burgers", img: "https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?w=400&h=300&fit=crop", desc: "Classic beef burger", popular: false },
         { id: 10, name: "Cheese Burger", price: 470, category: "burgers", img: "https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?w=400&h=300&fit=crop", desc: "With cheddar cheese", popular: true },
         { id: 11, name: "Special Large Pizza", price: 850, category: "burgers", img: "https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?w=400&h=300&fit=crop", desc: "Loaded special", popular: true },
         { id: 12, name: "Beef Large Pizza", price: 670, category: "burgers", img: "https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?w=400&h=300&fit=crop", desc: "Beef topping", popular: false },
         
-        // Vegetarian & Breakfast
+        // Vegetarian & Breakfast - Food only
         { id: 13, name: "በየአይነት / Beyayentu", price: 300, category: "veg", img: "https://images.pexels.com/photos/6094897/pexels-photo-6094897.jpeg?w=400&h=300&fit=crop", desc: "Mixed veg platter", popular: true },
         { id: 14, name: "Special ful", price: 200, category: "veg", img: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?w=400&h=300&fit=crop", desc: "Fava beans breakfast", popular: false },
         
-        // Desserts & Drinks
+        // Desserts & Drinks - Food only
         { id: 15, name: "Black Forest", price: 130, category: "desserts", img: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?w=400&h=300&fit=crop", desc: "Chocolate cake", popular: true },
         { id: 16, name: "Mango Juice", price: 150, category: "desserts", img: "https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?w=400&h=300&fit=crop", desc: "Fresh mango", popular: false },
         { id: 17, name: "Special Juice", price: 250, category: "desserts", img: "https://images.pexels.com/photos/2069594/pexels-photo-2069594.jpeg?w=400&h=300&fit=crop", desc: "Mix milk, vanilla, chocolate", popular: true },
@@ -663,7 +663,7 @@
         for (let [cat, items] of Object.entries(grouped)) {
             let catTitle = { ethiopian:'🍖 Meat & Traditional', burgers:'🍔 Burgers & Pizza', veg:'🥗 Vegetarian & Breakfast', desserts:'🍰 Desserts & Drinks' }[cat] || cat;
             html += `<div class="category-section"><div class="category-heading">${catTitle}</div><div class="items-grid">`;
-            items.forEach(item => { html += `<div class="menu-card">${item.popular ? '<div class="popular-badge">🔥 Popular</div>' : ''}<img class="card-img" src="${item.img}" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?w=400&h=300&fit=crop'"><div class="card-content"><div class="item-title"><span class="item-name">${item.name}</span><span class="item-price">${item.price} ETB</span></div><div class="item-desc">${item.desc}</div><button class="add-btn" data-id="${item.id}">+ Add</button></div></div>`; });
+            items.forEach(item => { html += `<div class="menu-card">${item.popular ? '<div class="popular-badge">🔥 Popular</div>' : ''}<img class="card-img" src="${item.img}" loading="lazy" onerror="this.src='https://images.pexels.com/photos/6094929/pexels-photo-6094929.jpeg?w=400&h=300&fit=crop'"><div class="card-content"><div class="item-title"><span class="item-name">${item.name}</span><span class="item-price">${item.price} ETB</span></div><div class="item-desc">${item.desc}</div><button class="add-btn" data-id="${item.id}">+ Add</button></div></div>`; });
             html += `</div></div>`;
         }
         container.innerHTML = html;

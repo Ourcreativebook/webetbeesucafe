@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Webet Beersu Cafe | Digital Menu & Order</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (free icons) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -32,6 +32,16 @@
             padding: 1rem;
         }
 
+        /* Hero Image Section */
+        .hero-image {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
         /* Hero Header */
         .hero {
             background: linear-gradient(135deg, #1e3c2c 0%, #2a4a35 100%);
@@ -46,11 +56,15 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         .brand h1 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             letter-spacing: -0.5px;
+            font-weight: 900;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+        }
+        .brand h1 i {
+            font-size: 1.8rem;
         }
         .brand p {
             opacity: 0.9;
@@ -368,6 +382,14 @@
             border-top: 1px solid #3a4a3f;
             font-size: 0.8rem;
         }
+        .developer-link {
+            color: #c17b4c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .developer-link:hover {
+            text-decoration: underline;
+        }
 
         @media (max-width: 800px) {
             .menu-order-grid {
@@ -408,6 +430,9 @@
             .info-badge {
                 text-align: center;
             }
+            .hero-image {
+                height: 200px;
+            }
         }
         .sidebar-toggle {
             display: none;
@@ -428,11 +453,14 @@
 </head>
 <body>
 <div class="app-container">
+    <!-- Hero Image - Ethiopian Traditional Food -->
+    <img class="hero-image" src="https://images.unsplash.com/photo-1623238925906-bd5c3eab6bfc?w=1400&h=380&fit=crop" alt="Ethiopian Traditional Food - Injera with various wot and tibs">
+
     <!-- Hero Header -->
     <div class="hero">
         <div class="brand">
-            <h1>☕🌿 WEBET BEERSU <span style="font-size: 1rem;">🇪🇹</span></h1>
-            <p>Cafe & Restaurant · Addis Ababa · ጥሩ አገልግሎት ያለው ምግብ</p>
+            <h1><i class="fas fa-mug-hot"></i> WEBET BEERSU <span style="font-size: 1.5rem;">CAFE & RESTAURANT</span></h1>
+            <p>Addis Ababa · ጥሩ አገልግሎት ያለው ምግብ</p>
             <div style="display: flex; gap: 12px; margin-top: 8px; flex-wrap: wrap;">
                 <span><i class="fas fa-truck"></i> Fast Delivery (Free ≤5km)</span>
                 <span><i class="far fa-clock"></i> 30-45 min</span>
@@ -496,7 +524,7 @@
         </div>
     </div>
 
-    <!-- FOOTER (New) -->
+    <!-- FOOTER with Developer Credit -->
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-col">
@@ -527,16 +555,17 @@
             </div>
         </div>
         <div class="copyright">
-            © 2025 Webet Beersu Cafe & Restaurant. All rights reserved. | ጥሩ አገልግሎት ያለው ምግብ
+            © 2025 Webet Beersu Cafe & Restaurant. All rights reserved. | ጥሩ አገልግሎት ያለው ምግብ<br>
+            Developed by <a href="https://addispowerwebsolution.pages.dev/" target="_blank" class="developer-link">Addis Power Web Solution</a>
         </div>
     </footer>
 </div>
 
 <script>
-    // ---------- CLIENT CONFIGURATION (Easily updatable) ----------
-    const RESTAURANT_PHONE = "0911718700"; // For order summary
+    // ---------- CLIENT CONFIGURATION ----------
+    const RESTAURANT_PHONE = "0911718700";
     
-    // ---------- FULL MENU DATA (with popular flags) ----------
+    // ---------- FULL MENU DATA ----------
     const MENU_ITEMS = [
         { id: 1, name: "ታልቅ / Quiet", price: 370, category: "ethiopian", img: "https://images.unsplash.com/photo-1546833999-b9f581a1b1b2?w=400&h=300&fit=crop", desc: "Slow cooked meat", popular: false },
         { id: 2, name: "የባማ ቀብስ / Yebeg tibes", price: 600, category: "ethiopian", img: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&h=300&fit=crop", desc: "Juicy lamb tibs", popular: true },
@@ -646,13 +675,14 @@
         navigator.clipboard.writeText(message);
     }
 
-    // Event listeners and init
+    // Event listeners
     document.getElementById('clearOrderBtn')?.addEventListener('click', clearCart);
     document.getElementById('placeOrderBtn')?.addEventListener('click', placeOrder);
     document.getElementById('searchInput')?.addEventListener('input', (e) => { searchQuery = e.target.value; renderMenu(); });
     document.querySelectorAll('.tab-btn').forEach(btn => btn.addEventListener('click', () => { document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); currentTab = btn.dataset.cat; renderMenu(); }));
     document.querySelectorAll('.copy-btn').forEach(btn => btn.addEventListener('click', () => { navigator.clipboard.writeText(btn.dataset.copy); alert(`Copied: ${btn.dataset.copy}`); }));
     document.getElementById('sidebarToggle')?.addEventListener('click', () => document.getElementById('orderSidebar').classList.toggle('open'));
+    
     loadCart();
     renderMenu();
 </script>

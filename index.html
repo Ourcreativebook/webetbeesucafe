@@ -35,11 +35,11 @@
         /* Hero Image Section */
         .hero-image {
             width: 100%;
-            height: 400px;
+            height: 420px;
             object-fit: cover;
             border-radius: 2rem;
             margin-bottom: 1.5rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.15);
         }
 
         /* Hero Header */
@@ -454,8 +454,8 @@
 </head>
 <body>
 <div class="app-container">
-    <!-- Hero Image - Ethiopian Traditional Food Platter (Food Only) -->
-    <img class="hero-image" src="https://images.pexels.com/photos/6094929/pexels-photo-6094929.jpeg?w=1400&h=400&fit=crop" alt="Ethiopian Traditional Food Platter - Injera with Various Wot">
+    <!-- Hero Image - Delicious Ethiopian Traditional Food (Will make you hungry!) -->
+    <img class="hero-image" src="https://images.pexels.com/photos/6094929/pexels-photo-6094929.jpeg?w=1400&h=420&fit=crop" alt="Delicious Ethiopian Traditional Food - Injera with Doro Wat, Tibs and Various Wot">
 
     <!-- Hero Header -->
     <div class="hero">
@@ -566,32 +566,32 @@
     // ---------- CLIENT CONFIGURATION ----------
     const RESTAURANT_PHONE = "0911718700";
     
-    // ---------- FULL MENU DATA WITH FOOD-ONLY IMAGES ----------
+    // ---------- FULL MENU DATA WITH APPETIZING IMAGES ----------
     const MENU_ITEMS = [
-        // Ethiopian Meat & Traditional - Real Ethiopian food images only
-        { id: 1, name: "ታልቅ / Quiet", price: 370, category: "ethiopian", img: "https://images.pexels.com/photos/6094930/pexels-photo-6094930.jpeg?w=400&h=300&fit=crop", desc: "Slow cooked meat", popular: false },
-        { id: 2, name: "የባማ ቀብስ / Yebeg tibes", price: 600, category: "ethiopian", img: "https://images.pexels.com/photos/6089150/pexels-photo-6089150.jpeg?w=400&h=300&fit=crop", desc: "Juicy lamb tibs", popular: true },
-        { id: 3, name: "የባማ ቅቅል / Yebeg kikil", price: 420, category: "ethiopian", img: "https://images.pexels.com/photos/6054752/pexels-photo-6054752.jpeg?w=400&h=300&fit=crop", desc: "Lamb stew", popular: false },
-        { id: 4, name: "ጎመን በስጋ / Gomen Bisega", price: 350, category: "ethiopian", img: "https://images.pexels.com/photos/6089146/pexels-photo-6089146.jpeg?w=400&h=300&fit=crop", desc: "Collard greens with beef", popular: false },
-        { id: 5, name: "ቋንቋ ፍርፍር / Quanta firir", price: 400, category: "ethiopian", img: "https://images.pexels.com/photos/6094928/pexels-photo-6094928.jpeg?w=400&h=300&fit=crop", desc: "Dried meat stir-fry", popular: false },
-        { id: 6, name: "ስጋ ፍርፍር / Siga firfir", price: 350, category: "ethiopian", img: "https://images.pexels.com/photos/6054763/pexels-photo-6054763.jpeg?w=400&h=300&fit=crop", desc: "Beef firfir", popular: false },
-        { id: 7, name: "ክትፎ ፍርፍር / Kitfo Firfir", price: 350, category: "ethiopian", img: "https://images.pexels.com/photos/6094932/pexels-photo-6094932.jpeg?w=400&h=300&fit=crop", desc: "Spiced minced meat", popular: false },
-        { id: 8, name: "ከምበ የቆስክ / Combo Yefisik", price: 850, category: "ethiopian", img: "https://images.pexels.com/photos/12793315/pexels-photo-12793315.jpeg?w=400&h=300&fit=crop", desc: "Meat combo platter", popular: true },
+        // Ethiopian Meat & Traditional - Authentic, mouth-watering Ethiopian dishes
+        { id: 1, name: "ታልቅ / Quiet", price: 370, category: "ethiopian", img: "https://images.pexels.com/photos/6094930/pexels-photo-6094930.jpeg?w=400&h=300&fit=crop", desc: "Slow cooked meat with berbere spice", popular: false },
+        { id: 2, name: "የባማ ቀብስ / Yebeg tibes", price: 600, category: "ethiopian", img: "https://images.pexels.com/photos/6089150/pexels-photo-6089150.jpeg?w=400&h=300&fit=crop", desc: "Juicy lamb tibs sautéed with rosemary", popular: true },
+        { id: 3, name: "የባማ ቅቅል / Yebeg kikil", price: 420, category: "ethiopian", img: "https://images.pexels.com/photos/6054752/pexels-photo-6054752.jpeg?w=400&h=300&fit=crop", desc: "Tender lamb stew with aromatic spices", popular: false },
+        { id: 4, name: "ጎመን በስጋ / Gomen Bisega", price: 350, category: "ethiopian", img: "https://images.pexels.com/photos/6089146/pexels-photo-6089146.jpeg?w=400&h=300&fit=crop", desc: "Collard greens with tender beef", popular: false },
+        { id: 5, name: "ቋንቋ ፍርፍር / Quanta firir", price: 400, category: "ethiopian", img: "https://images.pexels.com/photos/6094928/pexels-photo-6094928.jpeg?w=400&h=300&fit=crop", desc: "Dried meat stir-fry, traditional flavor", popular: false },
+        { id: 6, name: "ስጋ ፍርፍር / Siga firfir", price: 350, category: "ethiopian", img: "https://images.pexels.com/photos/6054763/pexels-photo-6054763.jpeg?w=400&h=300&fit=crop", desc: "Beef firfir with injera pieces", popular: false },
+        { id: 7, name: "ክትፎ ፍርፍር / Kitfo Firfir", price: 350, category: "ethiopian", img: "https://images.pexels.com/photos/6094932/pexels-photo-6094932.jpeg?w=400&h=300&fit=crop", desc: "Spiced minced meat with mitmita", popular: false },
+        { id: 8, name: "ከምበ የቆስክ / Combo Yefisik", price: 850, category: "ethiopian", img: "https://images.pexels.com/photos/12793315/pexels-photo-12793315.jpeg?w=400&h=300&fit=crop", desc: "Meat combo platter - feast for two", popular: true },
         
-        // Burgers & Pizza - Food only
-        { id: 9, name: "Normal Burger", price: 420, category: "burgers", img: "https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?w=400&h=300&fit=crop", desc: "Classic beef burger", popular: false },
-        { id: 10, name: "Cheese Burger", price: 470, category: "burgers", img: "https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?w=400&h=300&fit=crop", desc: "With cheddar cheese", popular: true },
-        { id: 11, name: "Special Large Pizza", price: 850, category: "burgers", img: "https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?w=400&h=300&fit=crop", desc: "Loaded special", popular: true },
-        { id: 12, name: "Beef Large Pizza", price: 670, category: "burgers", img: "https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?w=400&h=300&fit=crop", desc: "Beef topping", popular: false },
+        // Burgers & Pizza - Classic comfort food
+        { id: 9, name: "Normal Burger", price: 420, category: "burgers", img: "https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?w=400&h=300&fit=crop", desc: "Classic beef burger with fresh veggies", popular: false },
+        { id: 10, name: "Cheese Burger", price: 470, category: "burgers", img: "https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?w=400&h=300&fit=crop", desc: "With melted cheddar cheese", popular: true },
+        { id: 11, name: "Special Large Pizza", price: 850, category: "burgers", img: "https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?w=400&h=300&fit=crop", desc: "Loaded special pizza, family size", popular: true },
+        { id: 12, name: "Beef Large Pizza", price: 670, category: "burgers", img: "https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?w=400&h=300&fit=crop", desc: "Generous beef topping", popular: false },
         
-        // Vegetarian & Breakfast - Food only
-        { id: 13, name: "በየአይነት / Beyayentu", price: 300, category: "veg", img: "https://images.pexels.com/photos/6094897/pexels-photo-6094897.jpeg?w=400&h=300&fit=crop", desc: "Mixed veg platter", popular: true },
-        { id: 14, name: "Special ful", price: 200, category: "veg", img: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?w=400&h=300&fit=crop", desc: "Fava beans breakfast", popular: false },
+        // Vegetarian & Breakfast - Healthy & delicious
+        { id: 13, name: "በየአይነት / Beyayentu", price: 300, category: "veg", img: "https://images.pexels.com/photos/6094897/pexels-photo-6094897.jpeg?w=400&h=300&fit=crop", desc: "Mixed veg platter - variety of flavors", popular: true },
+        { id: 14, name: "Special ful", price: 200, category: "veg", img: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?w=400&h=300&fit=crop", desc: "Fava beans breakfast with spices", popular: false },
         
-        // Desserts & Drinks - Food only
-        { id: 15, name: "Black Forest", price: 130, category: "desserts", img: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?w=400&h=300&fit=crop", desc: "Chocolate cake", popular: true },
-        { id: 16, name: "Mango Juice", price: 150, category: "desserts", img: "https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?w=400&h=300&fit=crop", desc: "Fresh mango", popular: false },
-        { id: 17, name: "Special Juice", price: 250, category: "desserts", img: "https://images.pexels.com/photos/2069594/pexels-photo-2069594.jpeg?w=400&h=300&fit=crop", desc: "Mix milk, vanilla, chocolate", popular: true },
+        // Desserts & Drinks - Sweet treats
+        { id: 15, name: "Black Forest", price: 130, category: "desserts", img: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?w=400&h=300&fit=crop", desc: "Chocolate cake with cherry filling", popular: true },
+        { id: 16, name: "Mango Juice", price: 150, category: "desserts", img: "https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?w=400&h=300&fit=crop", desc: "Fresh mango juice, no sugar added", popular: false },
+        { id: 17, name: "Special Juice", price: 250, category: "desserts", img: "https://images.pexels.com/photos/2069594/pexels-photo-2069594.jpeg?w=400&h=300&fit=crop", desc: "Mix of milk, vanilla, chocolate", popular: true },
     ];
 
     let cart = [];
@@ -678,8 +678,8 @@
         if (cart.length === 0) { alert("Your cart is empty."); return; }
         let total = cart.reduce((sum, i) => sum + (getItemById(i.id).price * i.quantity), 0);
         let itemsText = cart.map(i => `${getItemById(i.id).name} x${i.quantity} = ${getItemById(i.id).price * i.quantity} ETB`).join("\n");
-        let message = `🛒 NEW ORDER - Webet Beersu\n\nCustomer: ${name}\nPhone: ${phone}\nAddress: ${address || "Pickup"}\n\nItems:\n${itemsText}\n\nTOTAL: ${total} ETB\n\nThank you!`;
-        alert("Order summary copied to clipboard. Please complete payment via TeleBirr or CBE.");
+        let message = `🛒 NEW ORDER - Webet Beersu\n\nCustomer: ${name}\nPhone: ${phone}\nAddress: ${address || "Pickup"}\n\nItems:\n${itemsText}\n\nTOTAL: ${total} ETB\n\nThank you for choosing Webet Beersu!`;
+        alert("✅ Order summary copied to clipboard!\n\nPlease complete payment via TeleBirr or CBE bank transfer.");
         navigator.clipboard.writeText(message);
     }
 
@@ -688,7 +688,7 @@
     document.getElementById('placeOrderBtn')?.addEventListener('click', placeOrder);
     document.getElementById('searchInput')?.addEventListener('input', (e) => { searchQuery = e.target.value; renderMenu(); });
     document.querySelectorAll('.tab-btn').forEach(btn => btn.addEventListener('click', () => { document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); currentTab = btn.dataset.cat; renderMenu(); }));
-    document.querySelectorAll('.copy-btn').forEach(btn => btn.addEventListener('click', () => { navigator.clipboard.writeText(btn.dataset.copy); alert(`Copied: ${btn.dataset.copy}`); }));
+    document.querySelectorAll('.copy-btn').forEach(btn => btn.addEventListener('click', () => { navigator.clipboard.writeText(btn.dataset.copy); alert(`✅ Copied: ${btn.dataset.copy}`); }));
     document.getElementById('sidebarToggle')?.addEventListener('click', () => document.getElementById('orderSidebar').classList.toggle('open'));
     
     loadCart();

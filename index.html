@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Webet Beersu Cafe | Digital Menu & Order</title>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -22,27 +20,21 @@
             line-height: 1.4;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         .app-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 1rem;
         }
 
-        /* Hero Image Section */
         .hero-image {
             width: 100%;
-            height: 420px;
+            height: 400px;
             object-fit: cover;
             border-radius: 2rem;
             margin-bottom: 1.5rem;
-            box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* Hero Header */
         .hero {
             background: linear-gradient(135deg, #1e3c2c 0%, #2a4a35 100%);
             border-radius: 2rem;
@@ -53,43 +45,34 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
+
         .brand h1 {
-            font-size: 2rem;
-            letter-spacing: -0.5px;
+            font-size: 1.8rem;
             font-weight: 900;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
-        .brand h1 i {
-            font-size: 1.8rem;
-        }
+
         .brand p {
             opacity: 0.9;
             margin-top: 0.25rem;
             font-size: 0.9rem;
         }
+
         .info-badge {
             background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(4px);
             padding: 0.75rem 1.25rem;
             border-radius: 2rem;
             text-align: right;
         }
+
         .info-badge .phone {
             font-size: 1.3rem;
             font-weight: bold;
         }
-        .delivery-note {
-            font-size: 0.8rem;
-        }
 
-        /* Search Bar */
-        .search-container {
-            margin-bottom: 1.5rem;
-        }
         .search-bar {
             width: 100%;
             padding: 0.9rem 1.2rem;
@@ -98,16 +81,9 @@
             background: white;
             font-family: inherit;
             font-size: 1rem;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-            transition: 0.2s;
-        }
-        .search-bar:focus {
-            outline: none;
-            border-color: #c17b4c;
-            box-shadow: 0 0 0 3px rgba(193,123,76,0.2);
+            margin-bottom: 1.5rem;
         }
 
-        /* Tabs */
         .tabs {
             display: flex;
             flex-wrap: wrap;
@@ -116,54 +92,46 @@
             border-bottom: 2px solid #e2dcd2;
             padding-bottom: 0.5rem;
         }
+
         .tab-btn {
             background: transparent;
             border: none;
             padding: 0.6rem 1.2rem;
             font-weight: 600;
-            font-size: 0.95rem;
             border-radius: 40px;
             cursor: pointer;
-            transition: 0.2s;
             color: #4a3b2f;
-            font-family: inherit;
         }
+
         .tab-btn.active {
             background: #c17b4c;
             color: white;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-        .tab-btn:hover:not(.active) {
-            background: #e9e0d4;
         }
 
-        /* Grid */
         .menu-order-grid {
             display: grid;
             grid-template-columns: 1fr 380px;
             gap: 2rem;
         }
 
-        /* Menu Items */
         .items-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 1.5rem;
         }
+
         .menu-card {
             background: white;
             border-radius: 1.5rem;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.2s;
-            display: flex;
-            flex-direction: column;
-            position: relative;
+            transition: 0.2s;
         }
+
         .menu-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 15px 25px rgba(0,0,0,0.1);
         }
+
         .popular-badge {
             position: absolute;
             top: 12px;
@@ -174,42 +142,37 @@
             padding: 4px 10px;
             border-radius: 30px;
             font-weight: bold;
-            z-index: 2;
         }
+
         .card-img {
             width: 100%;
             height: 170px;
             object-fit: cover;
             background: #e9dfd1;
         }
+
         .card-content {
-            padding: 1rem 1rem 1.2rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
+            padding: 1rem;
         }
+
         .item-title {
             font-weight: 700;
-            font-size: 1.1rem;
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 0.3rem;
+            margin-bottom: 0.5rem;
         }
-        .item-name {
-            color: #2c221b;
-            font-size: 0.95rem;
-        }
+
         .item-price {
             color: #c17b4c;
             font-weight: 800;
         }
+
         .item-desc {
             font-size: 0.75rem;
             color: #7a6a5c;
-            margin: 0.5rem 0 1rem;
+            margin-bottom: 1rem;
         }
+
         .add-btn {
             background: #1e3c2c;
             border: none;
@@ -218,93 +181,48 @@
             border-radius: 2rem;
             font-weight: 600;
             cursor: pointer;
-            transition: 0.2s;
-            font-family: inherit;
-            margin-top: auto;
+            width: 100%;
         }
+
         .add-btn:hover {
             background: #c17b4c;
         }
 
-        /* Order Sidebar */
         .order-sidebar {
             background: white;
             border-radius: 1.5rem;
             padding: 1.5rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             position: sticky;
             top: 1rem;
-            align-self: start;
             height: fit-content;
-            max-height: 90vh;
-            overflow-y: auto;
         }
+
         .order-title {
             font-size: 1.5rem;
             font-weight: bold;
-            border-bottom: 2px solid #f0eae2;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
             display: flex;
             justify-content: space-between;
-        }
-        .order-items {
             margin-bottom: 1rem;
-            max-height: 300px;
-            overflow-y: auto;
         }
-        .order-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.6rem 0;
-            border-bottom: 1px solid #f0eae2;
-            font-size: 0.9rem;
-        }
-        .order-item-info {
-            flex: 2;
-        }
-        .order-item-qty {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .qty-btn {
-            background: #f0eae2;
-            border: none;
-            width: 26px;
-            height: 26px;
-            border-radius: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        .remove-item {
-            color: #b1624b;
-            margin-left: 8px;
-            cursor: pointer;
-            font-weight: bold;
-        }
+
         .total-row {
             font-weight: 800;
             font-size: 1.3rem;
-            margin: 1rem 0;
             display: flex;
             justify-content: space-between;
-            border-top: 2px dashed #ddd;
-            padding-top: 1rem;
-        }
-        .customer-form {
             margin: 1rem 0;
+            padding-top: 1rem;
+            border-top: 2px dashed #ddd;
         }
+
         .customer-form input, .customer-form textarea {
             width: 100%;
             padding: 0.7rem;
             margin-bottom: 0.7rem;
             border: 1px solid #e2dcd2;
             border-radius: 1rem;
-            font-family: inherit;
         }
+
         .place-order-btn {
             background: #c17b4c;
             color: white;
@@ -313,16 +231,16 @@
             width: 100%;
             border-radius: 2rem;
             font-weight: bold;
-            font-size: 1rem;
             cursor: pointer;
-            margin-top: 0.5rem;
         }
+
         .payment-block {
             background: #faf7f2;
             border-radius: 1rem;
             padding: 1rem;
             margin: 1rem 0;
         }
+
         .copy-btn {
             background: #e9e0d4;
             border: none;
@@ -332,97 +250,37 @@
             cursor: pointer;
             margin-left: 8px;
         }
-        .clear-btn {
-            background: none;
-            border: 1px solid #c17b4c;
-            padding: 6px 12px;
-            border-radius: 40px;
-            color: #c17b4c;
-            cursor: pointer;
-            font-weight: 500;
-        }
-        
-        /* Footer */
+
         .footer {
             margin-top: 3rem;
             background: #1e2a24;
             color: #e2dcd2;
             border-radius: 2rem 2rem 1rem 1rem;
-            padding: 2rem 2rem 1rem;
+            padding: 2rem;
         }
+
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
-            margin-bottom: 2rem;
         }
+
         .footer-col h4 {
             color: #c17b4c;
             margin-bottom: 1rem;
-            font-size: 1.1rem;
         }
-        .footer-col p, .footer-col a {
-            color: #cfc6bc;
-            text-decoration: none;
-            line-height: 1.8;
-            font-size: 0.9rem;
-        }
-        .social-icons a {
-            display: inline-block;
-            margin-right: 1rem;
-            font-size: 1.4rem;
-            color: #cfc6bc;
-            transition: 0.2s;
-        }
-        .social-icons a:hover {
-            color: #c17b4c;
-        }
-        .copyright {
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid #3a4a3f;
-            font-size: 0.8rem;
-        }
+
         .developer-link {
             color: #c17b4c;
             text-decoration: none;
-            font-weight: 600;
-        }
-        .developer-link:hover {
-            text-decoration: underline;
         }
 
         @media (max-width: 800px) {
             .menu-order-grid {
                 grid-template-columns: 1fr;
             }
-            .order-sidebar {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                top: auto;
-                max-height: 70vh;
-                border-radius: 1.5rem 1.5rem 0 0;
-                z-index: 100;
-                box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
-                transform: translateY(calc(100% - 60px));
-                transition: transform 0.3s;
-            }
-            .order-sidebar.open {
-                transform: translateY(0);
-            }
-            .sidebar-toggle {
-                display: block;
-                text-align: center;
-                background: #c17b4c;
-                color: white;
-                width: 80px;
-                margin: -1rem auto 1rem;
-                padding: 6px;
-                border-radius: 30px;
-                cursor: pointer;
-                font-size: 0.8rem;
+            .hero-image {
+                height: 200px;
             }
             .hero {
                 flex-direction: column;
@@ -431,186 +289,117 @@
             .info-badge {
                 text-align: center;
             }
-            .hero-image {
-                height: 200px;
-            }
-        }
-        .sidebar-toggle {
-            display: none;
-        }
-        @media (max-width: 800px) {
-            .sidebar-toggle {
-                display: block;
-            }
-        }
-        .category-heading {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin: 0 0 1rem 0;
-            border-left: 5px solid #c17b4c;
-            padding-left: 12px;
         }
     </style>
 </head>
 <body>
 <div class="app-container">
-    <!-- Hero Image - Delicious Ethiopian Traditional Food (Will make you hungry!) -->
-    <img class="hero-image" src="https://images.pexels.com/photos/6094929/pexels-photo-6094929.jpeg?w=1400&h=420&fit=crop" alt="Delicious Ethiopian Traditional Food - Injera with Doro Wat, Tibs and Various Wot">
+    <!-- Hero Image - Ethiopian Food Only -->
+    <img class="hero-image" src="https://images.pexels.com/photos/6094929/pexels-photo-6094929.jpeg?w=1400&h=400&fit=crop" alt="Ethiopian Food">
 
-    <!-- Hero Header -->
     <div class="hero">
         <div class="brand">
-            <h1><i class="fas fa-mug-hot"></i> WEBET BEERSU <span style="font-size: 1.5rem;">CAFE & RESTAURANT</span></h1>
+            <h1><i class="fas fa-mug-hot"></i> WEBET BEERSU CAFE & RESTAURANT</h1>
             <p>Addis Ababa · ጥሩ አገልግሎት ያለው ምግብ</p>
             <div style="display: flex; gap: 12px; margin-top: 8px; flex-wrap: wrap;">
                 <span><i class="fas fa-truck"></i> Fast Delivery</span>
                 <span><i class="far fa-clock"></i> 30-45 min</span>
                 <span><i class="fas fa-store"></i> Easy Pickup</span>
-                <span><i class="fas fa-chair"></i> Table Reservation</span>
             </div>
         </div>
         <div class="info-badge">
-            <div class="phone"><i class="fas fa-phone-alt"></i> 0911718700</div>
-            <div class="delivery-note"><i class="fas fa-mug-hot"></i> Traditional Coffee Ceremony</div>
+            <div class="phone">📞 0911718700</div>
+            <div>☕ Traditional Coffee Ceremony</div>
         </div>
     </div>
 
-    <!-- Search -->
-    <div class="search-container">
-        <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Search menu... (e.g., tibs, pizza, juice)">
-    </div>
+    <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Search menu...">
 
-    <!-- Tabs -->
-    <div class="tabs" id="tabContainer">
-        <button class="tab-btn active" data-cat="all">🍽️ All Items</button>
-        <button class="tab-btn" data-cat="ethiopian">🍖 Meat & Traditional</button>
-        <button class="tab-btn" data-cat="burgers">🍔 Burgers & Pizza</button>
-        <button class="tab-btn" data-cat="veg">🥗 Vegetarian & Breakfast</button>
-        <button class="tab-btn" data-cat="desserts">🍰 Desserts & Drinks</button>
+    <div class="tabs">
+        <button class="tab-btn active" data-cat="all">All Items</button>
+        <button class="tab-btn" data-cat="ethiopian">Meat & Traditional</button>
+        <button class="tab-btn" data-cat="burgers">Burgers & Pizza</button>
+        <button class="tab-btn" data-cat="veg">Vegetarian</button>
+        <button class="tab-btn" data-cat="desserts">Desserts & Drinks</button>
     </div>
 
     <div class="menu-order-grid">
         <div id="menuContainer"></div>
 
-        <!-- Order Sidebar -->
         <div class="order-sidebar" id="orderSidebar">
-            <div class="sidebar-toggle" id="sidebarToggle">🛒 Show Order</div>
             <div class="order-title">
-                <span>✨ Your Order</span>
-                <button class="clear-btn" id="clearOrderBtn">Clear All</button>
+                <span>Your Order</span>
+                <button class="clear-btn" id="clearOrderBtn" style="background:none; border:1px solid #c17b4c; padding:5px 12px; border-radius:40px; cursor:pointer;">Clear</button>
             </div>
-            <div id="orderItemsList">No items yet — add from menu</div>
+            <div id="orderItemsList">No items yet</div>
             <div class="total-row">
-                <span>TOTAL (ETB)</span>
+                <span>TOTAL</span>
                 <span id="totalPrice">0 ETB</span>
             </div>
-            
-            <!-- Customer Details Form -->
+
             <div class="customer-form">
-                <input type="text" id="customerName" placeholder="Your Name" value="">
-                <input type="tel" id="customerPhone" placeholder="Phone Number (for delivery)">
-                <textarea id="customerAddress" rows="2" placeholder="Delivery Address (or 'Pickup')"></textarea>
-                <button class="place-order-btn" id="placeOrderBtn"><i class="fas fa-check-circle"></i> Place Order</button>
+                <input type="text" id="customerName" placeholder="Your Name">
+                <input type="tel" id="customerPhone" placeholder="Phone Number">
+                <textarea id="customerAddress" rows="2" placeholder="Delivery Address or 'Pickup'"></textarea>
+                <button class="place-order-btn" id="placeOrderBtn">Place Order</button>
             </div>
 
             <div class="payment-block">
-                <div><strong>🏦 Commercial Bank of Ethiopia</strong><br>1000234567890<br>Webet Beersu Cafe<br><small>SWIFT: CBETETAA · VAT 15% included</small>
-                    <button class="copy-btn" data-copy="1000234567890">📋 Copy account</button>
+                <div><strong>Commercial Bank of Ethiopia</strong><br>1000234567890<br>Webet Beersu Cafe
+                    <button class="copy-btn" data-copy="1000234567890">Copy</button>
                 </div>
-                <div style="margin-top: 12px;"><strong>📱 TeleBirr</strong><br>0911718700<br>Merchant ID: WB9876
-                    <button class="copy-btn" data-copy="0911718700">📋 Copy number</button>
+                <div style="margin-top: 12px;"><strong>TeleBirr</strong><br>0911718700
+                    <button class="copy-btn" data-copy="0911718700">Copy</button>
                 </div>
             </div>
-            <div class="invoice-note" style="font-size:0.7rem; text-align:center;">🧾 Webet Beersu · Thank you! አመሰግናለሁ</div>
         </div>
     </div>
 
-    <!-- FOOTER with Developer Credit -->
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-col">
-                <h4><i class="fas fa-store"></i> Webet Beersu Cafe</h4>
-                <p>Addis Ababa, Ethiopia<br>
-                <i class="fas fa-phone"></i> 0911718700<br>
-                <i class="fas fa-envelope"></i> info@webetbeersu.com</p>
+                <h4>Webet Beersu Cafe</h4>
+                <p>Addis Ababa, Ethiopia<br>📞 0911718700</p>
             </div>
             <div class="footer-col">
-                <h4><i class="far fa-clock"></i> Opening Hours</h4>
-                <p>Monday - Saturday: 8:00 AM - 10:00 PM<br>
-                Sunday: 9:00 AM - 9:00 PM</p>
+                <h4>Hours</h4>
+                <p>Mon-Sat: 8AM - 10PM<br>Sun: 9AM - 9PM</p>
             </div>
             <div class="footer-col">
-                <h4><i class="fas fa-link"></i> Quick Links</h4>
-                <p><a href="#" style="color:#cfc6bc;">Home</a><br>
-                <a href="#" style="color:#cfc6bc;">Full Menu</a><br>
-                <a href="#" style="color:#cfc6bc;">Reservation</a></p>
-            </div>
-            <div class="footer-col">
-                <h4><i class="fas fa-share-alt"></i> Follow Us</h4>
+                <h4>Follow Us</h4>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-telegram"></i>
                 </div>
             </div>
         </div>
-        <div class="copyright">
-            © 2025 Webet Beersu Cafe & Restaurant. All rights reserved. | ጥሩ አገልግሎት ያለው ምግብ<br>
-            Developed by <a href="https://addispowerwebsolution.pages.dev/" target="_blank" class="developer-link">Addis Power Web Solution</a>
+        <div class="copyright" style="text-align:center; margin-top:2rem; padding-top:1rem; border-top:1px solid #3a4a3f;">
+            © 2025 Webet Beersu Cafe | Developed by <a href="https://addispowerwebsolution.pages.dev/" target="_blank" class="developer-link">Addis Power Web Solution</a>
         </div>
     </footer>
 </div>
 
 <script>
-    // ---------- CLIENT CONFIGURATION ----------
-    const RESTAURANT_PHONE = "0911718700";
-    
-    // ---------- FULL MENU DATA WITH APPETIZING IMAGES ----------
     const MENU_ITEMS = [
-        // Ethiopian Meat & Traditional - Authentic, mouth-watering Ethiopian dishes
-        { id: 1, name: "ታልቅ / Quiet", price: 370, category: "ethiopian", img: "https://images.pexels.com/photos/6094930/pexels-photo-6094930.jpeg?w=400&h=300&fit=crop", desc: "Slow cooked meat with berbere spice", popular: false },
-        { id: 2, name: "የባማ ቀብስ / Yebeg tibes", price: 600, category: "ethiopian", img: "https://images.pexels.com/photos/6089150/pexels-photo-6089150.jpeg?w=400&h=300&fit=crop", desc: "Juicy lamb tibs sautéed with rosemary", popular: true },
-        { id: 3, name: "የባማ ቅቅል / Yebeg kikil", price: 420, category: "ethiopian", img: "https://images.pexels.com/photos/6054752/pexels-photo-6054752.jpeg?w=400&h=300&fit=crop", desc: "Tender lamb stew with aromatic spices", popular: false },
-        { id: 4, name: "ጎመን በስጋ / Gomen Bisega", price: 350, category: "ethiopian", img: "https://images.pexels.com/photos/6089146/pexels-photo-6089146.jpeg?w=400&h=300&fit=crop", desc: "Collard greens with tender beef", popular: false },
-        { id: 5, name: "ቋንቋ ፍርፍር / Quanta firir", price: 400, category: "ethiopian", img: "https://images.pexels.com/photos/6094928/pexels-photo-6094928.jpeg?w=400&h=300&fit=crop", desc: "Dried meat stir-fry, traditional flavor", popular: false },
-        { id: 6, name: "ስጋ ፍርፍር / Siga firfir", price: 350, category: "ethiopian", img: "https://images.pexels.com/photos/6054763/pexels-photo-6054763.jpeg?w=400&h=300&fit=crop", desc: "Beef firfir with injera pieces", popular: false },
-        { id: 7, name: "ክትፎ ፍርፍር / Kitfo Firfir", price: 350, category: "ethiopian", img: "https://images.pexels.com/photos/6094932/pexels-photo-6094932.jpeg?w=400&h=300&fit=crop", desc: "Spiced minced meat with mitmita", popular: false },
-        { id: 8, name: "ከምበ የቆስክ / Combo Yefisik", price: 850, category: "ethiopian", img: "https://images.pexels.com/photos/12793315/pexels-photo-12793315.jpeg?w=400&h=300&fit=crop", desc: "Meat combo platter - feast for two", popular: true },
-        
-        // Burgers & Pizza - Classic comfort food
-        { id: 9, name: "Normal Burger", price: 420, category: "burgers", img: "https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?w=400&h=300&fit=crop", desc: "Classic beef burger with fresh veggies", popular: false },
-        { id: 10, name: "Cheese Burger", price: 470, category: "burgers", img: "https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?w=400&h=300&fit=crop", desc: "With melted cheddar cheese", popular: true },
-        { id: 11, name: "Special Large Pizza", price: 850, category: "burgers", img: "https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?w=400&h=300&fit=crop", desc: "Loaded special pizza, family size", popular: true },
-        { id: 12, name: "Beef Large Pizza", price: 670, category: "burgers", img: "https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?w=400&h=300&fit=crop", desc: "Generous beef topping", popular: false },
-        
-        // Vegetarian & Breakfast - Healthy & delicious
-        { id: 13, name: "በየአይነት / Beyayentu", price: 300, category: "veg", img: "https://images.pexels.com/photos/6094897/pexels-photo-6094897.jpeg?w=400&h=300&fit=crop", desc: "Mixed veg platter - variety of flavors", popular: true },
-        { id: 14, name: "Special ful", price: 200, category: "veg", img: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?w=400&h=300&fit=crop", desc: "Fava beans breakfast with spices", popular: false },
-        
-        // Desserts & Drinks - Sweet treats
-        { id: 15, name: "Black Forest", price: 130, category: "desserts", img: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?w=400&h=300&fit=crop", desc: "Chocolate cake with cherry filling", popular: true },
-        { id: 16, name: "Mango Juice", price: 150, category: "desserts", img: "https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?w=400&h=300&fit=crop", desc: "Fresh mango juice, no sugar added", popular: false },
-        { id: 17, name: "Special Juice", price: 250, category: "desserts", img: "https://images.pexels.com/photos/2069594/pexels-photo-2069594.jpeg?w=400&h=300&fit=crop", desc: "Mix of milk, vanilla, chocolate", popular: true },
+        { id: 1, name: "ታልቅ / Quiet", price: 370, category: "ethiopian", img: "https://images.pexels.com/photos/6094930/pexels-photo-6094930.jpeg?w=400&h=300&fit=crop", desc: "Slow cooked meat" },
+        { id: 2, name: "የባማ ቀብስ / Yebeg tibes", price: 600, category: "ethiopian", img: "https://images.pexels.com/photos/6089150/pexels-photo-6089150.jpeg?w=400&h=300&fit=crop", desc: "Juicy lamb tibs", popular: true },
+        { id: 3, name: "የባማ ቅቅል / Yebeg kikil", price: 420, category: "ethiopian", img: "https://images.pexels.com/photos/6054752/pexels-photo-6054752.jpeg?w=400&h=300&fit=crop", desc: "Lamb stew" },
+        { id: 4, name: "ጎመን በስጋ / Gomen Bisega", price: 350, category: "ethiopian", img: "https://images.pexels.com/photos/6089146/pexels-photo-6089146.jpeg?w=400&h=300&fit=crop", desc: "Collard greens with beef" },
+        { id: 5, name: "ከምበ የቆስክ / Combo Yefisik", price: 850, category: "ethiopian", img: "https://images.pexels.com/photos/12793315/pexels-photo-12793315.jpeg?w=400&h=300&fit=crop", desc: "Meat combo platter", popular: true },
+        { id: 6, name: "Normal Burger", price: 420, category: "burgers", img: "https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?w=400&h=300&fit=crop", desc: "Classic beef burger" },
+        { id: 7, name: "Cheese Burger", price: 470, category: "burgers", img: "https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?w=400&h=300&fit=crop", desc: "With cheddar cheese", popular: true },
+        { id: 8, name: "Special Large Pizza", price: 850, category: "burgers", img: "https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?w=400&h=300&fit=crop", desc: "Loaded special pizza", popular: true },
+        { id: 9, name: "በየአይነት / Beyayentu", price: 300, category: "veg", img: "https://images.pexels.com/photos/6094897/pexels-photo-6094897.jpeg?w=400&h=300&fit=crop", desc: "Mixed veg platter", popular: true },
+        { id: 10, name: "Special ful", price: 200, category: "veg", img: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?w=400&h=300&fit=crop", desc: "Fava beans breakfast" },
+        { id: 11, name: "Black Forest", price: 130, category: "desserts", img: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?w=400&h=300&fit=crop", desc: "Chocolate cake", popular: true },
+        { id: 12, name: "Mango Juice", price: 150, category: "desserts", img: "https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?w=400&h=300&fit=crop", desc: "Fresh mango juice" }
     ];
 
     let cart = [];
     let currentTab = "all";
     let searchQuery = "";
 
-    // Load cart from localStorage
-    function loadCart() {
-        const saved = localStorage.getItem("webet_cart");
-        if (saved) {
-            try {
-                cart = JSON.parse(saved);
-            } catch(e) { cart = []; }
-        }
-        renderCart();
-    }
     function saveCart() { localStorage.setItem("webet_cart", JSON.stringify(cart)); }
-
-    function getItemById(id) { return MENU_ITEMS.find(i => i.id === id); }
+    function loadCart() { const saved = localStorage.getItem("webet_cart"); if (saved) { cart = JSON.parse(saved); } renderCart(); }
 
     function addToCart(id) {
         const existing = cart.find(i => i.id === id);
@@ -618,7 +407,6 @@
         else cart.push({ id, quantity: 1 });
         saveCart();
         renderCart();
-        if (window.innerWidth <= 800) document.getElementById("orderSidebar").classList.add("open");
     }
 
     function updateQuantity(id, delta) {
@@ -636,61 +424,67 @@
 
     function renderCart() {
         const orderDiv = document.getElementById('orderItemsList');
-        if (cart.length === 0) { orderDiv.innerHTML = '✨ No items yet — add from menu'; document.getElementById('totalPrice').innerText = '0 ETB'; return; }
-        let itemsHtml = `<div class="order-items">`;
+        if (cart.length === 0) { orderDiv.innerHTML = 'No items yet — add from menu'; document.getElementById('totalPrice').innerText = '0 ETB'; return; }
+        let html = `<div>`;
         let total = 0;
-        cart.forEach(cartItem => {
-            const item = getItemById(cartItem.id);
-            const subtotal = item.price * cartItem.quantity;
-            total += subtotal;
-            itemsHtml += `<div class="order-item"><div class="order-item-info">${item.name}<br><small>${item.price} ETB</small></div>
-            <div class="order-item-qty"><button class="qty-btn" data-id="${item.id}" data-delta="-1">-</button><span>${cartItem.quantity}</span>
-            <button class="qty-btn" data-id="${item.id}" data-delta="1">+</button><span class="remove-item" data-id="${item.id}">🗑️</span></div></div>`;
+        cart.forEach(c => {
+            const item = MENU_ITEMS.find(i => i.id === c.id);
+            total += item.price * c.quantity;
+            html += `<div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                        <div>${item.name} x${c.quantity}</div>
+                        <div>${item.price * c.quantity} ETB 
+                            <button class="qty-btn" data-id="${c.id}" data-delta="-1" style="background:#f0eae2; border:none; width:25px; border-radius:20px;">-</button>
+                            <button class="qty-btn" data-id="${c.id}" data-delta="1" style="background:#f0eae2; border:none; width:25px; border-radius:20px;">+</button>
+                            <button class="remove-item" data-id="${c.id}" style="background:none; border:none; color:#c17b4c;">✖</button>
+                        </div>
+                    </div>`;
         });
-        itemsHtml += `</div>`;
-        orderDiv.innerHTML = itemsHtml;
+        html += `</div>`;
+        orderDiv.innerHTML = html;
         document.getElementById('totalPrice').innerText = `${total} ETB`;
-        document.querySelectorAll('.qty-btn').forEach(btn => btn.addEventListener('click', (e) => { updateQuantity(parseInt(btn.dataset.id), parseInt(btn.dataset.delta)); }));
-        document.querySelectorAll('.remove-item').forEach(btn => btn.addEventListener('click', (e) => { const id = parseInt(btn.dataset.id); cart = cart.filter(i => i.id !== id); saveCart(); renderCart(); }));
+        document.querySelectorAll('.qty-btn').forEach(btn => btn.addEventListener('click', () => updateQuantity(parseInt(btn.dataset.id), parseInt(btn.dataset.delta))));
+        document.querySelectorAll('.remove-item').forEach(btn => btn.addEventListener('click', () => { cart = cart.filter(i => i.id !== parseInt(btn.dataset.id)); saveCart(); renderCart(); }));
     }
 
     function renderMenu() {
         const container = document.getElementById('menuContainer');
         let filtered = MENU_ITEMS.filter(i => (currentTab === "all" || i.category === currentTab) && i.name.toLowerCase().includes(searchQuery.toLowerCase()));
-        const grouped = {};
-        filtered.forEach(item => { if (!grouped[item.category]) grouped[item.category] = []; grouped[item.category].push(item); });
-        let html = '';
-        for (let [cat, items] of Object.entries(grouped)) {
-            let catTitle = { ethiopian:'🍖 Meat & Traditional', burgers:'🍔 Burgers & Pizza', veg:'🥗 Vegetarian & Breakfast', desserts:'🍰 Desserts & Drinks' }[cat] || cat;
-            html += `<div class="category-section"><div class="category-heading">${catTitle}</div><div class="items-grid">`;
-            items.forEach(item => { html += `<div class="menu-card">${item.popular ? '<div class="popular-badge">🔥 Popular</div>' : ''}<img class="card-img" src="${item.img}" loading="lazy" onerror="this.src='https://images.pexels.com/photos/6094929/pexels-photo-6094929.jpeg?w=400&h=300&fit=crop'"><div class="card-content"><div class="item-title"><span class="item-name">${item.name}</span><span class="item-price">${item.price} ETB</span></div><div class="item-desc">${item.desc}</div><button class="add-btn" data-id="${item.id}">+ Add</button></div></div>`; });
-            html += `</div></div>`;
-        }
+        let html = `<div class="items-grid">`;
+        filtered.forEach(item => {
+            html += `<div class="menu-card" style="position:relative;">
+                        ${item.popular ? '<div class="popular-badge">🔥 Popular</div>' : ''}
+                        <img class="card-img" src="${item.img}" loading="lazy">
+                        <div class="card-content">
+                            <div class="item-title"><span>${item.name}</span><span class="item-price">${item.price} ETB</span></div>
+                            <div class="item-desc">${item.desc}</div>
+                            <button class="add-btn" data-id="${item.id}">+ Add</button>
+                        </div>
+                    </div>`;
+        });
+        html += `</div>`;
         container.innerHTML = html;
-        document.querySelectorAll('.add-btn').forEach(btn => btn.addEventListener('click', (e) => addToCart(parseInt(btn.dataset.id))));
+        document.querySelectorAll('.add-btn').forEach(btn => btn.addEventListener('click', () => addToCart(parseInt(btn.dataset.id))));
     }
 
     function placeOrder() {
         const name = document.getElementById('customerName').value.trim();
         const phone = document.getElementById('customerPhone').value.trim();
-        const address = document.getElementById('customerAddress').value.trim();
         if (!name || !phone) { alert("Please enter your name and phone number."); return; }
-        if (cart.length === 0) { alert("Your cart is empty."); return; }
-        let total = cart.reduce((sum, i) => sum + (getItemById(i.id).price * i.quantity), 0);
-        let itemsText = cart.map(i => `${getItemById(i.id).name} x${i.quantity} = ${getItemById(i.id).price * i.quantity} ETB`).join("\n");
-        let message = `🛒 NEW ORDER - Webet Beersu\n\nCustomer: ${name}\nPhone: ${phone}\nAddress: ${address || "Pickup"}\n\nItems:\n${itemsText}\n\nTOTAL: ${total} ETB\n\nThank you for choosing Webet Beersu!`;
-        alert("✅ Order summary copied to clipboard!\n\nPlease complete payment via TeleBirr or CBE bank transfer.");
-        navigator.clipboard.writeText(message);
+        if (cart.length === 0) { alert("Cart is empty."); return; }
+        alert("Order summary copied! Please complete payment via TeleBirr or CBE.");
     }
 
-    // Event listeners
     document.getElementById('clearOrderBtn')?.addEventListener('click', clearCart);
     document.getElementById('placeOrderBtn')?.addEventListener('click', placeOrder);
     document.getElementById('searchInput')?.addEventListener('input', (e) => { searchQuery = e.target.value; renderMenu(); });
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.addEventListener('click', () => { document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); currentTab = btn.dataset.cat; renderMenu(); }));
-    document.querySelectorAll('.copy-btn').forEach(btn => btn.addEventListener('click', () => { navigator.clipboard.writeText(btn.dataset.copy); alert(`✅ Copied: ${btn.dataset.copy}`); }));
-    document.getElementById('sidebarToggle')?.addEventListener('click', () => document.getElementById('orderSidebar').classList.toggle('open'));
-    
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentTab = btn.dataset.cat;
+        renderMenu();
+    }));
+    document.querySelectorAll('.copy-btn').forEach(btn => btn.addEventListener('click', () => { navigator.clipboard.writeText(btn.dataset.copy); alert("Copied!"); }));
+
     loadCart();
     renderMenu();
 </script>
